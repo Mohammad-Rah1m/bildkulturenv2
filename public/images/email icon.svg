@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.521" height="17.243" viewBox="0 0 24.521 17.243">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_63" data-name="Rectangle 63" width="24.521" height="17.243" fill="#2a79a5"/>
+    </clipPath>
+  </defs>
+  <g id="email_icon" data-name="email icon" transform="translate(0 0)">
+    <g id="Group_190" data-name="Group 190" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path id="Path_205" data-name="Path 205" d="M7.611,9.372.263,16.729c-.094.018-.059-.014-.082-.06A3.352,3.352,0,0,1,0,16.107V2.6c.085-.176.092-.387.181-.562C.2,1.995.169,1.963.263,1.98Z" transform="translate(0 -0.733)" fill="#2a79a5"/>
+      <path id="Path_206" data-name="Path 206" d="M23.988.264,13.55,10.706a.859.859,0,0,1-1.056,0L2.056.218l.612-.2L23.248,0c.122.014.775.109.74.264" transform="translate(-0.763 0)" fill="#2a79a5"/>
+      <path id="Path_207" data-name="Path 207" d="M23.986,22.733c-.023.1-.662.224-.788.218H2.841A2.229,2.229,0,0,1,2.1,22.78c-.048-.037-.079-.068-.026-.12l7.287-7.275c.931.654,2.014,2.426,3.175,2.609,2.012.316,2.775-1.586,4.138-2.609Z" transform="translate(-0.76 -5.708)" fill="#2a79a5"/>
+      <path id="Path_208" data-name="Path 208" d="M34.493,15.9l-.218.836L26.88,9.34,34.3,1.983l.194.788Z" transform="translate(-9.972 -0.736)" fill="#2a79a5"/>
+    </g>
+  </g>
+</svg>

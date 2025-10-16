@@ -1,0 +1,1 @@
+const baseUrl=process.env.WORDPRESS_URL;
