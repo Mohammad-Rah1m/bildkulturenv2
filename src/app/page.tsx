@@ -25,19 +25,19 @@ const info = [
       "The question of the medium being used also raises the issue of the relationship between technology and image, between the production and semantics of images.",
     icon: "/images/icons/medium-icon.svg",
   },
-  {
-    title: "Which Network?",
-    excerpt: "",
-    description:
-      "One essential component of the project was first to develop a web-based information system. The prototype is aimed in multiple ways at creating networks: ",
-    icon: "/images/icons/network-icon.svg",
-  },
+  // {
+  //   title: "Which Network?",
+  //   excerpt: "",
+  //   description:
+  //     "One essential component of the project was first to develop a web-based information system. The prototype is aimed in multiple ways at creating networks: ",
+  //   icon: "/images/icons/network-icon.svg",
+  // },
 ];
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {info.map((item) => (
           <div
             key={item.title}

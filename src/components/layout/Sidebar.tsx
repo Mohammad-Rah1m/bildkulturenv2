@@ -1,16 +1,17 @@
 "use client";
 
 import React from "react";
-import { Home, Settings, User } from "lucide-react"; // lightweight icon library
+import { Home, Settings, User,LayoutGrid,Search,NotebookTabs  } from "lucide-react"; // lightweight icon library
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 const menuItems = [
-  { label: "Project", icon: Home, href: "/" },
-  { label: "Application", icon: Settings, href: "/settings" },
+  { label: "Start", icon: Home, href: "/" },
+  // { label: "Project", icon: LayoutGrid, href: "/project" },
+  { label: "Application", icon: Settings, href: "/application" },
   { label: "Join", icon: User, href: "/join" },
-  { label: "Search", icon: User, href: "/profile" },
-  { label: "Contact", icon: User, href: "/profile" },
+  // { label: "Search", icon: Search, href: "/search" },
+  { label: "Contact", icon: NotebookTabs, href: "/contact" },
 ];
 const Sidebar = () => {
      const pathname = usePathname();

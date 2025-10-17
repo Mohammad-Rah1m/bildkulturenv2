@@ -45,7 +45,7 @@ export default function RootLayout({
             </div>
 
             {/* Scrollable Main Content */}
-            <main className="flex-1 overflow-y-auto pl-4">{children}</main>
+            <main className="flex-1 overflow-y-auto pl-4 pb-4">{children}</main>
           </div>
         </div>
         </Providers>

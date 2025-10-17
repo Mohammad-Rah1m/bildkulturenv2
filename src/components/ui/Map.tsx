@@ -792,7 +792,7 @@ const Map = () => {
           </g>
         </g>
         <g id="Group_233" data-name="Group 233">
-          <text
+          {/* <text
             id="Russia"
             transform="translate(1765 283)"
             fill="#fff"
@@ -803,7 +803,7 @@ const Map = () => {
             <tspan x="-30.132" y="0">
               Russia
             </tspan>
-          </text>
+          </text> */}
           <text
             id="Belarus"
             transform="translate(1473 507)"
