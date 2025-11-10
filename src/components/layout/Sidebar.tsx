@@ -10,7 +10,7 @@ const menuItems = [
   // { label: "Project", icon: LayoutGrid, href: "/project" },
   { label: "Application", icon: Settings, href: "/application" },
   { label: "Join", icon: User, href: "/join" },
-  // { label: "Search", icon: Search, href: "/search" },
+  { label: "Search", icon: Search, href: "/search" },
   { label: "Contact", icon: NotebookTabs, href: "/contact" },
 ];
 const Sidebar = () => {

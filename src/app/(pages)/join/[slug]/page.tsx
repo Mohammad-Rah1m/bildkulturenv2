@@ -1,25 +1,7 @@
 import client from "@/lib/apollo-client";
 import { GET_PROJECT_BY_SLUG } from "@/lib/graphql/queries/getProjectBySlug";
 import Image from "next/image";
-
-// export async function generateStaticParams() {
-//   // Optional: pre-generate pages for all projects
-//   const { data } = await client.query({
-//     query: gql`
-//       {
-//         projects {
-//           nodes {
-//             slug
-//           }
-//         }
-//       }
-//     `,
-//   });
-
-//   return data.projects.nodes.map((p: any) => ({
-//     slug: p.slug,
-//   }));
-// }
+import Link from "next/link";
 
 export const revalidate = 60; // ISR every 1 min
 
@@ -37,10 +19,11 @@ export default async function ProjectPage({
 
   const project = data.project;
 
-  return (
-    <div className="max-w-5xl mx-auto py-10">
-      <h1 className="text-3xl font-bold mb-6">{project.title}</h1>
+  console.log("project:", project);
 
+  return (
+    <div className="">
+      <h1 className="text-3xl mb-6">{project.title}</h1>
       <div className="grid grid-cols-2 gap-4">
         <Image
           src={
@@ -52,18 +35,76 @@ export default async function ProjectPage({
           height={500}
           className="rounded-md"
         />
-        <div>
-          <p className="text-lg text-gray-700 mb-6">
-            {project.projectFields?.description}
-          </p>
-
-          <p className="text-gray-500">Year: {project.projectFields?.year}</p>
-
+        <div className="space-y-5">
+          <div>
+            <h3 className="font-semibold">ID</h3>
+            <p className="">{project.id}</p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Year</h3>
+            <p className="">{project.projectFields?.year}</p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Description</h3>
+            <p className="">{project.projectFields?.description}</p>
+          </div>
           {/* Render WordPress content if needed */}
-          <div
-            className="prose mt-6"
-            dangerouslySetInnerHTML={{ __html: project.content }}
-          />
+          {project.persons?.nodes?.length > 0 && (
+            <div>
+              <h3 className="font-semibold">Persons</h3>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {project.persons.nodes.map((t: any) => (
+                  <Link
+                    key={t.slug}
+                    href={`/results?term=${encodeURIComponent(
+                      t.slug
+                    )}&taxonomy=PERSONS`}
+                    className="text-sm bg-blue-100 hover:bg-accent hover:text-white px-3 py-1 rounded-full transition"
+                  >
+                    {t.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {project.places?.nodes?.length > 0 && (
+            <div>
+              <h3 className="font-semibold">Places</h3>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {project.places.nodes.map((t: any) => (
+                  <Link
+                    key={t.slug}
+                    href={`/results?term=${encodeURIComponent(
+                      t.slug
+                    )}&taxonomy=PLACES`}
+                    className="text-sm bg-blue-100 hover:bg-accent hover:text-white px-3 py-1 rounded-full transition"
+                  >
+                    {t.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {project.keywords?.nodes?.length > 0 && (
+            <div>
+              <h3 className="font-semibold">Subject Terms</h3>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {project.keywords.nodes.map((t: any) => (
+                  <Link
+                    key={t.slug}
+                    href={`/results?term=${encodeURIComponent(
+                      t.slug
+                    )}&taxonomy=KEYWORDS`}
+                    className="text-sm bg-blue-100 hover:bg-accent hover:text-white px-3 py-1 rounded-full transition"
+                  >
+                    {t.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

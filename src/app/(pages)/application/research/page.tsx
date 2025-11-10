@@ -1,16 +1,13 @@
-import Image from "next/image";
 import React from "react";
-import { ArrowRight } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+
 const page = () => {
   return (
-    <div className="flex flex-col gap-5">
-      <PageHeader
-        title="Application"
-        description='Our image database is still under development. However, this is not the only reason why "Ecological Image Cultures" is a dynamic database; it is primarily because the image data is constantly adapted to reflect research questions and teaching requirements. The wealth of material expands in line with the curiosity and attention developed in research and teaching. Consequently, the image database reflects less of a systematic set of criteria and more of a product of concrete research and teaching projects. These projects can be viewed below.'
-      />
-
+    <div className="space-y-6">
+      <PageHeader title="Research Projects" description="" />
       <div className="grid grid-cols-3 gap-4">
         <div className="rounded-md p-4 border border-border hover:shadow-lg flex flex-col gap-2">
           <div className="relative w-full h-44 overflow-hidden rounded-lg">
@@ -21,9 +18,9 @@ const page = () => {
               className="object-cover"
             />
           </div>
-          <h3 className="text-2xl">Research Projects</h3>
+          <h3 className="text-2xl">Peering into the depths</h3>
           <Link
-            href={`/application/research`}
+            href={`/application/research/peering`}
             className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-white hover:bg-accent/80 transition"
             aria-label="View Details"
           >
@@ -39,7 +36,7 @@ const page = () => {
               className="object-cover"
             />
           </div>
-          <h3 className="text-2xl">Teaching Projects</h3>
+          <h3 className="text-2xl">Augenblick Heft 45</h3>
           <Link
             href={`/application/teaching`}
             className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-white hover:bg-accent/80 transition"

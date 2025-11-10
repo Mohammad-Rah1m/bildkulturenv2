@@ -32,14 +32,7 @@ const page = async () => {
               className="bg-cover bg-center h-40 rounded-md"
             ></div>
             <h2 className="text-xl font-semibold">{p.title}</h2>
-            <div className="flex items-center justify-between">
-              {/* <button
-                className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-white hover:bg-accent/80 transition"
-                aria-label="View Details"
-                
-              >
-                <ArrowRight size={20} />
-              </button> */}
+            <div className="flex items-center justify-between">             
               <Link
                 href={`/join/${p.slug}`}
                 className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-white hover:bg-accent/80 transition"

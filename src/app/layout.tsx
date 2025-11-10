@@ -4,6 +4,8 @@ import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import Header from "@/components/layout/Header";
 import { Providers } from "./Providers"
+import { ApolloProvider } from "@apollo/client";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,14 +40,14 @@ export default function RootLayout({
           </div>
 
           {/* Content Area */}
-          <div className="flex flex-col flex-1 overflow-hidden">
+          <div className="flex flex-col flex-1 overflow-hidden p-4 space-y-4">
             {/* Sticky Header */}
-            <div className="p-4">
+            <div className="">
               <Header />
             </div>
 
             {/* Scrollable Main Content */}
-            <main className="flex-1 overflow-y-auto pl-4 pb-4">{children}</main>
+            <main className="flex-1 overflow-y-auto">{children}</main>
           </div>
         </div>
         </Providers>
