@@ -6,6 +6,9 @@ export const GET_KEYWORDS = gql`
             nodes {
                 name
                 slug
+                translations {
+                    germanTerm
+                }
             }
         }
     }
@@ -17,6 +20,9 @@ export const GET_PLACES = gql`
             nodes {
                 name
                 slug
+                translations {
+                    germanTerm
+                }
             }
         }
     }
@@ -28,6 +34,9 @@ export const GET_PERSONS = gql`
             nodes {
                 name
                 slug
+                translations {
+                    germanTerm
+                }
             }
         }
     }

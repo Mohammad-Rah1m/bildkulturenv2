@@ -7,14 +7,11 @@ export const GET_PROJECT_BY_SLUG = gql`
       title
       content
       projectFields {
+        id
         year
         description
-        image {
-          node {
-            sourceUrl
-            altText
-          }
-        }
+        beschreibung
+        germanTitle
       }
       featuredImage {
         node {
@@ -26,18 +23,27 @@ export const GET_PROJECT_BY_SLUG = gql`
         nodes {
           name
           slug
+          translations{
+            germanTerm
+          }
         }
       }
       places {
         nodes {
           name
           slug
+          translations{
+            germanTerm
+          }
         }
       }
       keywords {
         nodes {
           name
           slug
+          translations{
+            germanTerm
+          }
         }
       }  
     }

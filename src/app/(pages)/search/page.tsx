@@ -12,6 +12,9 @@ import PageHeader from "@/components/layout/PageHeader";
 import Image from "next/image";
 import { ArrowRight, MapPin, SquareChevronRight, User } from "lucide-react";
 import Link from "next/link";
+import { getTranslations } from 'next-intl/server';
+import {cookies} from "next/headers";
+
 
 // Define the shape for both taxonomy types for safety
 interface TaxonomyNode {
@@ -23,7 +26,7 @@ interface TaxonomyNode {
 export const revalidate = 600; // 10 minutes
 
 // Helper component to render the taxonomy links
-const TaxonomyList = ({
+const TaxonomyList = async ({
   title,
   taxonomyType,
   nodes,
@@ -34,6 +37,11 @@ const TaxonomyList = ({
   nodes: TaxonomyNode[];
   icon: React.ReactNode;
 }) => {
+  const t = await getTranslations("Search");
+  
+  const locale = cookies().get("locale")?.value === "de" ? "DE" : "EN";
+  console.log("LOCALE:" , locale);
+
   return (
     <div className="border border-border rounded-md p-4 space-y-4">
       <div className="flex items-center gap-2">
@@ -50,7 +58,8 @@ const TaxonomyList = ({
               )}&taxonomy=${taxonomyType}`}
               className="text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 px-3 py-1 rounded-full transition"
             >
-              {node.name}
+              {/* {node.name} */}
+              {locale === "DE" ? node.translations.germanTerm ?? node.name : node.name}
             </Link>
           ))}
         </div>
@@ -64,6 +73,8 @@ const TaxonomyList = ({
 };
 
 const page = async () => {
+  const t = await getTranslations("Search");
+  const tGeneral = await getTranslations("General");
   // 1. Fetch both queries concurrently using Promise.all()
   const [personsResult, keywordsResult, placesResult] = await Promise.all([
     client.query({ query: GET_PERSONS }),
@@ -85,67 +96,45 @@ const page = async () => {
   const places: TaxonomyNode[] = placesResult.data?.places?.nodes || [];
 
   const { data } = await client.query({ query: GET_PERSONS });
+
   console.log("data: ", data);
 
-  // const persons = data?.persons?.nodes;
   console.log("PERSONS:", persons);
+  console.log("PLACES:", places);
   console.log("KEYWORDS:", keywords);
 
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Search Projects"
-        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus beatae
-          doloribus provident."
+        title={t("title")}
+        description={t("description")}
       />
       <div className="rounded-md p-4 border border-border hover:shadow-lg max-w-max space-y-2">
-        <h3 className="text-xl">Simple Search</h3>
+        <h3 className="text-xl">{t('simple_search')}</h3>
         <SearchBar />
       </div>
 
       <div className="rounded-md p-4 border border-border hover:shadow-lg space-y-2">
-        <h3 className="text-xl">Thesaurus Search</h3>
+        <h3 className="text-xl">{t('thesaurus_search')}</h3>
         <div className="grid grid-cols-3 gap-4">
           <TaxonomyList
-            title="Subject Terms"
+            title={tGeneral("subject_terms")}
             taxonomyType="KEYWORDS"
             nodes={keywords}
             icon={<SquareChevronRight />}
           />
           <TaxonomyList
-            title="Places"
+            title={tGeneral("places")}
             taxonomyType="PLACES"
             nodes={places}
             icon={<MapPin />}
           />
           <TaxonomyList
-            title="Persons"
+            title={tGeneral("persons")}
             taxonomyType="PERSONS"
             nodes={persons}
             icon={<User />}
           />
-          {/* <div className="border border-border rounded-md p-2">
-            <h3> Persons</h3>
-            {persons.length > 0 ? (
-              <div className="flex flex-wrap gap-2">
-                {persons.map((person) => (
-                  <Link
-                    key={person.slug}
-                    href={`/results?term=${encodeURIComponent(
-                      person.slug
-                    )}&taxonomy=PERSONS`}
-                    className="text-sm bg-blue-100 hover:bg-accent hover:text-white px-3 py-1 rounded-full transition"
-                  >
-                    {person.name}
-                  </Link>
-                ))}
-              </div>
-            ) : (
-              <p className="text-gray-500">
-                No person terms are currently available for browsing.
-              </p>
-            )}
-          </div> */}
         </div>
       </div>
     </div>

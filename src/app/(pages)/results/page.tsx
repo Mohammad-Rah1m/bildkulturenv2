@@ -6,6 +6,9 @@ import { SEARCH_PROJECTS } from "@/lib/graphql/queries/simpleSearch";
 import { GET_PROJECTS_BY_KEYWORD } from "@/lib/graphql/queries/getProjectsByKeyword";
 import { GET_PROJECTS_BY_PERSON } from "@/lib/graphql/queries/getProjectsByPerson";
 import { GET_PROJECTS_BY_PLACES } from "@/lib/graphql/queries/getProjectsByPlaces";
+// import { getTranslations } from 'next-intl/server';
+import {useTranslations} from 'next-intl';
+
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -13,6 +16,9 @@ import Link from "next/link";
 type TaxonomyType = "PERSONS" | "PLACES" | "KEYWORDS";
 
 export default function SearchPage() {
+    // const t = await getTranslations("Join");
+  const t = useTranslations('General');
+
   const searchParams = useSearchParams();
 
   const term = searchParams.get("term") || "";
@@ -71,28 +77,6 @@ export default function SearchPage() {
       
       console.log(`Running query for: ${taxonomy || 'Search'}`);
 
-      // try {
-      //   if (taxonomy) {
-      //     const { data } = await client.query({
-      //       query: GET_PROJECTS_BY_KEYWORD,
-      //       variables: { name: term },
-      //     });
-      //     setResults(data?.keywords?.nodes?.[0]?.projects?.nodes || []);
-      //     console.log("taxanomy query run");
-      //   } else {
-      //     const { data } = await client.query({
-      //       query: SEARCH_PROJECTS,
-      //       variables: { searchTerm: term },
-      //     });
-      //     setResults(data?.projects?.nodes || []);
-      //     console.log("search query run");
-      //   }
-      // } catch (err) {
-      //   console.error("Error fetching search results:", err);
-      // } finally {
-      //   setLoading(false);
-      // }
-
       try {
         const { data } = await client.query({
           query,
@@ -117,13 +101,14 @@ export default function SearchPage() {
   return (
     <div className="">
       <h1 className="text-3xl mb-4">
-        Results for: <span className="text-accent">{displayTerm}</span>
+          {/* {t("results_for")}: <span className="text-accent">{displayTerm}</span> */}
+          {t("results")}
       </h1>
 
       {loading && <p>Loading...</p>}
 
       {!loading && results.length === 0 && (
-        <p className="text-gray-500">No results found.</p>
+        <p className="text-gray-500">{t("no_result")}.</p>
       )}
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">

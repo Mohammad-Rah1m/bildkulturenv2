@@ -3,9 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import Header from "@/components/layout/Header";
-import { Providers } from "./Providers"
-import { ApolloProvider } from "@apollo/client";
-
+import { Providers } from "./providers";
+// import { ApolloProvider } from "@apollo/client";
+import { NextIntlClientProvider } from "next-intl";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,25 +32,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-screen overflow-hidden`}
       >
-        <Providers>
-        <div className="flex h-full w-full">
-          {/* Fixed Sidebar */}
-          <div className="py-4 pl-4">
-            <Sidebar />
-          </div>
+        <NextIntlClientProvider>
+          <Providers>
+            <div className="flex h-full w-full">
+              {/* Fixed Sidebar */}
+              <div className="py-4 pl-4">
+                <Sidebar />
+              </div>
 
-          {/* Content Area */}
-          <div className="flex flex-col flex-1 overflow-hidden p-4 space-y-4">
-            {/* Sticky Header */}
-            <div className="">
-              <Header />
+              {/* Content Area */}
+              <div className="flex flex-col flex-1 overflow-hidden p-4 space-y-4">
+                {/* Sticky Header */}
+                <div className="">
+                  <Header />
+                </div>
+
+                {/* Scrollable Main Content */}
+                <main className="flex-1 overflow-y-auto">{children}</main>
+              </div>
             </div>
-
-            {/* Scrollable Main Content */}
-            <main className="flex-1 overflow-y-auto">{children}</main>
-          </div>
-        </div>
-        </Providers>
+          </Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

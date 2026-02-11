@@ -1,20 +1,31 @@
 "use client";
 
 import React from "react";
-import { Home, Settings, User,LayoutGrid,Search,NotebookTabs  } from "lucide-react"; // lightweight icon library
+import {
+  Home,
+  Settings,
+  User,
+  LayoutGrid,
+  Search,
+  NotebookTabs,
+} from "lucide-react"; // lightweight icon library
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { LocaleSwitcher } from "../ui/LocaleSwitcher";
+import {useTranslations} from 'next-intl';
+
 const menuItems = [
-  { label: "Start", icon: Home, href: "/" },
+  { label: "start", icon: Home, href: "/" },
   // { label: "Project", icon: LayoutGrid, href: "/project" },
-  { label: "Application", icon: Settings, href: "/application" },
-  { label: "Join", icon: User, href: "/join" },
-  { label: "Search", icon: Search, href: "/search" },
-  { label: "Contact", icon: NotebookTabs, href: "/contact" },
+  { label: "application", icon: Settings, href: "/application" },
+  { label: "join", icon: User, href: "/join" },
+  { label: "search", icon: Search, href: "/search" },
+  { label: "contact", icon: NotebookTabs, href: "/contact" },
 ];
 const Sidebar = () => {
-     const pathname = usePathname();
+  const t = useTranslations('Sidebar');
+  const pathname = usePathname();
   return (
     <aside className="h-full w-64 bg-card flex flex-col rounded-md p-4 justify-between">
       <div>
@@ -30,27 +41,22 @@ const Sidebar = () => {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2 hover:bg-accent hover:text-white transition-colors duration-150 ${pathname===item.href ? "bg-accent text-white" : ""}`}
+                  className={`flex items-center gap-3 rounded-md px-3 py-2 hover:bg-accent hover:text-white transition-colors duration-150 ${
+                    pathname === item.href ? "bg-accent text-white" : ""
+                  }`}
                 >
                   <item.icon className="h-5 w-5" />
-                  <span>{item.label}</span>
+                  <span>{t(item.label)}</span>
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
       </div>
+
       <div className="flex justify-between items-end">
-        <div className="rounded-md shadow-md flex gap-2 justify-between px-2 py-1 bg-background items-center">
-          <Image
-            src="/images/icons/uk.png"
-            alt="en-lang"
-            width={24}
-            height={24}
-          />
-          <p className="text-sm">En</p>
-        </div>
-        <p className="text-sm">All right reserved</p>
+        <LocaleSwitcher />
+        <p className="text-sm">{t("rights")}</p>
       </div>
     </aside>
   );

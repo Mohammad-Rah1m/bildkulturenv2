@@ -1,0 +1,63 @@
+{
+  "HomePage": {
+    "culture": {
+      "title":"Welche visuelle Kultur?",
+      "description":"In der Ökologie als Wissenschaft sind Bilder von Anfang an von Bedeutung für den Erkenntnisprozess und die Stabilisierung von Tatsachen. Die visuellen Darstellungen sind vielfältig und reichen von Landschaftsfotografie über traditionelle wissenschaftliche Zeichnungen bis hin zu Luft- und Mikrofotografie sowie diagrammatischen Techniken. Die Vielfalt und Präsenz bedeutet jedoch nicht, dass die visuellen Darstellungen von Anfang an als epistemische Bilder diskutiert wurden. Fotografien beispielsweise mussten in den 1920er und 1930er Jahren in der wissenschaftlichen Gemeinschaft erst als solche anerkannt werden. Heute sind digitale Bilder und insbesondere ihre spezifische Wissenskultur aus der Ökologie nicht mehr wegzudenken."
+    },
+    "ecology": {
+      "title":"Welche Ökologie?",
+      "description":"„Ökologie“ bezieht sich nicht nur auf eine wissenschaftliche Disziplin, sondern wird auch als Sammelbegriff für ingenieurwissenschaftliche, soziale und kulturelle Disziplinen wie Ökotechnologie, politische Ökologie, Kulturökologie und andere verwendet. „Ökologisches Denken“ wird auch in wirtschaftlichen, politischen oder philosophischen Bereichen und im Zusammenhang mit alltäglichen Aktivitäten diskutiert. Seit den 1970er Jahren werden Proteste und Aufklärungskampagnen gegen die zunehmend sichtbaren und messbaren Folgen der sogenannten Kohlenstoffgesellschaft und ihrer Konsumanforderungen von einer ökologischen oder Umweltbewegung vorgebracht. Diese Kritik ist auch heute noch aktuell, hat sich jedoch zu Diskursen über den Klimawandel, das Anthropozän oder Ansätze, die eine „tiefgreifende Nachhaltigkeit“ befürworten, verlagert."
+    },
+    "medium": {
+      "title":"Welches Medium?",
+      "description":"Die Vielfalt der visuellen Medien ist in der Ökologie als Wissenschaft sehr ausgeprägt, da diese Disziplin die Grenzen zwischen verschiedenen Natur- und Sozialwissenschaften überschritten hat. Die Landschaftsfotografie spielte eine ebenso wichtige Rolle wie traditionelle Zeichentechniken, grafische Darstellungen, dreidimensionale physikalische Modelle, Mikro- und Makrofotografie, Photogrammetrie oder analoge und digitale Satellitenbilder. Es entstanden spezifische visuelle Signaturen, wie beispielsweise Tiefenkoordinaten in der aquatischen Ökologie oder die Kombinatorik digitaler Daten aus Fernerkundungsmethoden und Biodiversitätsforschung."
+    },
+    "network": {
+      "title":"Welches Netzwerk?",
+      "description":"Das Netzwerk bezieht sich sowohl auf das informationstechnologische System, das aus verschiedenen Arten von Daten besteht, als auch auf das soziale Netzwerk von Akteuren in Wissenschaft und Gesellschaft. Die Website „Visual Cultures of Ecology” verknüpft Bild- und Literaturdaten, bietet ein Netzwerk von Begriffen und Termini über Metadaten, verknüpft historische Daten und bibliografische Daten und soll nicht zuletzt zur interdisziplinären und transdisziplinären Vernetzung verschiedener Interessen und Verfahren im Umgang mit Bildern beitragen."
+    }
+  },
+  "Application": {
+    "title": "Anwendung",
+    "description":"Unsere Bilddatenbank befindet sich noch im Aufbau. Dies ist jedoch nicht der einzige Grund, warum „Ökologische Bildkulturen“ eine dynamische Datenbank ist; vielmehr werden die Bilddaten fortlaufend an Forschungsfragen und Lehranforderungen angepasst. Der Materialbestand wächst mit der in Forschung und Lehre entwickelten Neugier und Aufmerksamkeit. Daher spiegelt die Bilddatenbank weniger ein systematisches Kriterienset wider, sondern vielmehr das Ergebnis konkreter Forschungs- und Lehrprojekte. Diese Projekte können Sie weiter unten einsehen."
+  },
+  "Sidebar": {
+    "start": "Startseite",
+    "application": "Bewerbung",
+    "join": "Mitmachen",
+    "search": "Suche",
+    "contact": "Kontakt",
+    "rights": "Alle Rechte vorbehalten"
+  },
+  "Join": {
+    "title": "dazu kommen",
+    "description":"Ihre Mitarbeit ist erforderlich! Das Projektteam würde sich freuen, wenn Sie Informationen zu den unten aufgeführten Bildern beisteuern könnten."
+  },
+  "Search": {
+    "title": "Such Projekte",
+    "description":"Ihre Mitarbeit ist erforderlich! Das Projektteam würde sich freuen, wenn Sie Informationen zu den unten aufgeführten Bildern beisteuern könnten.",
+    "simple_search":"Einfache Suche",
+    "thesaurus_search":"Thesaurus Suche"
+  },
+  "Contact": {
+    "title": "Kooperationen",
+    "description":"Ihre Mitarbeit ist erforderlich! Das Projektteam würde sich freuen, wenn Sie Informationen zu den unten aufgeführten Bildern beisteuern könnten.",
+    "colleagues" : "Kollegen"
+  },
+  "General": {
+    "search": "Suche",
+    "results_for":"Ergebnisse für",
+    "results":"Ergebnisse",
+    "no_result":"Keine Ergebnisse gefunden",
+    "description":"Beschreibung",
+    "places":"Orte",
+    "persons":"Personen",
+    "subject_terms": "Fachbegriffe",
+    "year": "Jahr",
+    "not_available":"nicht verfügbar"
+  },
+  "Keywords":{
+    "experiment": "Experimento",
+    "photo":"Foto"
+  }
+}

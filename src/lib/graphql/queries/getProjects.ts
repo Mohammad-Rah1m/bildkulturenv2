@@ -16,6 +16,7 @@ export const GET_PROJECTS = gql`
         projectFields {
           year
           description
+          germanTitle
         }
       }
     }

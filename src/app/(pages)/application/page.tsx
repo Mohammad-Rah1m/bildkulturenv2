@@ -3,12 +3,15 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 import Link from "next/link";
+import {useTranslations} from 'next-intl';
+
 const page = () => {
+  const t = useTranslations('Application');
   return (
     <div className="flex flex-col gap-5">
       <PageHeader
-        title="Application"
-        description='Our image database is still under development. However, this is not the only reason why "Ecological Image Cultures" is a dynamic database; it is primarily because the image data is constantly adapted to reflect research questions and teaching requirements. The wealth of material expands in line with the curiosity and attention developed in research and teaching. Consequently, the image database reflects less of a systematic set of criteria and more of a product of concrete research and teaching projects. These projects can be viewed below.'
+        title={t("title")}
+        description={t("description")}
       />
 
       <div className="grid grid-cols-3 gap-4">

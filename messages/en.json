@@ -1,0 +1,63 @@
+{
+  "HomePage": {
+    "culture": {
+      "title":"Which Visual Culture?",
+      "description":"In ecology as a science, images have been important from the outset for the process of producing knowledge and establishing facts. Visual representations are extremely diverse, ranging from landscape photography to traditional scientific drawings, aerial and microphotography, and diagrammatic techniques. However, this does not mean that these visual representations were discussed as epistemic images from the beginning. Photographs, for example, first had to be negotiated as such in the scientific community of the 1920s and 1930s. Today, digital images and their specific knowledge culture in particular have become an indispensable part of ecology."
+    },
+    "ecology": {
+      "title":"Which ecology?",
+      "description":"“Ecology” refers not only to a scientific discipline, but is also used as a collective term for engineering, social, and cultural disciplines such as eco-technology, political ecology, cultural ecology, and others. “Ecological thinking” is also discussed in economic, political, or philosophical fields and in the context of everyday activities. Since the 1970s, protests and awareness campaigns against the increasingly visible and measurable consequences of the so-called carbon society and its consumer demands have been voiced by an ecological or environmental movement. This criticism is still relevant today, but has shifted to discourses on climate change, the Anthropocene, or approaches that advocate “profound sustainability”."
+    },
+    "medium": {
+      "title":"Which medium?",
+      "description":"The diversity of visual media is very pronounced in ecology as a science, as the discipline has transcended the boundaries between various natural and social sciences. Landscape photography played just as much a role as traditional drawing techniques, graphic representations, three-dimensional physical models, micro and macro photography, photogrammetry, or analogue and digital satellite images. Specific visual signatures emerged, such as depth coordinates in aquatic ecology or the combinatorics of digital data from remote sensing methods and biodiversity research."
+    },
+    "network": {
+      "title":"Which network?",
+      "description":"The network refers both to the information technology system, which consists of various types of data, and to the social network of actors in science and society. The website “Visual Cultures of Ecology” links image and literature data, offers a network of concepts and terms via metadata, links historical data and bibliographic data, and, last but not least, aims to contribute to the interdisciplinary and transdisciplinary networking of various interests and procedures in dealing with images."
+    }
+  },
+  "Application": {
+    "title": "Application",
+    "description":"Our image database is still under development. However, this is not the only reason why 'Ecological Image Cultures' is a dynamic database; it is primarily because the image data is constantly adapted to reflect research questions and teaching requirements. The wealth of material expands in line with the curiosity and attention developed in research and teaching. Consequently, the image database reflects less of a systematic set of criteria and more of a product of concrete research and teaching projects. These projects can be viewed below."
+  },
+  "Sidebar": {
+    "start": "Start",
+    "application": "Application",
+    "join": "Join",
+    "search": "Search",
+    "contact": "Contact",
+    "rights": "All rights reserved"
+  },
+  "Join": {
+    "title": "Join In",
+    "description":"Your cooperation is needed! The project team would appreciate it if you could contribute information about the images listed below."
+  },
+  "Search": {
+    "title": "Search Projects",
+    "description":"Your cooperation is needed! The project team would appreciate it if you could contribute information about the images listed below.",
+    "simple_search":"Simple Search",
+    "thesaurus_search":"Thesaurus Search"
+  },
+  "Contact": {
+    "title": "Collaborations",
+    "description":"Your cooperation is needed! The project team would appreciate it if you could contribute information about the images listed below.",
+    "colleagues" : "Colleagues"
+  },
+  "General": {
+    "search": "Search",
+    "results_for":"Resuts for",
+    "results":"Results",
+    "no_result":"No results found",
+    "description":"Description",
+    "places":"Places",
+    "persons":"Persons",
+    "subject_terms": "Subject Terms",
+    "year": "Year",
+    "not_available":"Not available"
+  },
+  "Keywords":{
+    "experiment": "Experiment",
+    "photo":"Photo"
+  }
+}
