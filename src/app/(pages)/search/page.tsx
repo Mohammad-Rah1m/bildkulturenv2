@@ -69,7 +69,7 @@ const TaxonomyList = async ({
               className="text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 px-3 py-1 rounded-full transition"
             >
               {/* {node.name} */}
-              {locale === "DE" ? node.translations.germanTerm ?? node.name : node.name}
+              {locale === "DE" ? node.translations?.germanTerm ?? node.name : node.name}
             </Link>
           ))}
         </div>

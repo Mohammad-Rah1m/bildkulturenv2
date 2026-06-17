@@ -133,7 +133,7 @@ export default async function ProjectPage({
                     {/* {tKeywords(t.name)} */}
                     {/* {tKeywords(t.slug)} */}
                     {locale === "DE"
-                      ? (t.translations.germanTerm ?? t.name)
+                      ? (t.translations?.germanTerm ?? t.name)
                       : t.name}
                   </Link>
                 ))}
