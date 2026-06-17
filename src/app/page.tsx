@@ -70,7 +70,7 @@ export default function Home() {
             <div className="flex flex-col items-center text-center gap-3">
               <Image
                 src={selectedItem.icon}
-                alt={`${selectedItem.title} icon`}
+                alt={`${selectedItem.key} icon`}
                 width={60}
                 height={60}
               />

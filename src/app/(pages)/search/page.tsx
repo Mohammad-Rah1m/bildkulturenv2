@@ -86,19 +86,23 @@ const Page = async () => {
   const t = await getTranslations("Search");
   const tGeneral = await getTranslations("General");
   // 1. Fetch both queries concurrently using Promise.all()
-  const [personsResult, keywordsResult, placesResult] = await Promise.all([
-    client.query({ query: GET_PERSONS }),
-    client.query({ query: GET_KEYWORDS }),
-    client.query({ query: GET_PLACES }),
+  const [personsResult, keywordsResult, placesResult] = (await Promise.all([
+    client.query<{ persons: { nodes: TaxonomyNode[] } }>({ query: GET_PERSONS }),
+    client.query<{ keywords: { nodes: TaxonomyNode[] } }>({ query: GET_KEYWORDS }),
+    client.query<{ places: { nodes: TaxonomyNode[] } }>({ query: GET_PLACES }),
   ]).catch((err) => {
     console.error("Error fetching taxonomies:", err);
     // Return default empty structures on failure to prevent crashing
     return [
-      { data: { persons: { nodes: [] } } },
-      { data: { keywords: { nodes: [] } } },
-      { data: { places: { nodes: [] } } },
+      { data: { persons: { nodes: [] as TaxonomyNode[] } } },
+      { data: { keywords: { nodes: [] as TaxonomyNode[] } } },
+      { data: { places: { nodes: [] as TaxonomyNode[] } } },
     ];
-  });
+  })) as [
+    { data: { persons: { nodes: TaxonomyNode[] } } },
+    { data: { keywords: { nodes: TaxonomyNode[] } } },
+    { data: { places: { nodes: TaxonomyNode[] } } },
+  ];
 
   // 2. Safely extract the data
   const persons: TaxonomyNode[] = personsResult.data?.persons?.nodes || [];
