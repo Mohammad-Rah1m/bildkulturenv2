@@ -30,12 +30,12 @@ export default function SearchPage() {
   const [loading, setLoading] = useState(false);
 
   // 1. Determine the display term for the header
-  const displayTerm = useMemo(() => {
-    if (taxonomy) {
-        return `${taxonomy.charAt(0) + taxonomy.slice(1).toLowerCase()}: "${term}"`;
-    }
-    return `"${term}"`;
-  }, [term, taxonomy]);
+  // const displayTerm = useMemo(() => {
+  //   if (taxonomy) {
+  //       return `${taxonomy.charAt(0) + taxonomy.slice(1).toLowerCase()}: "${term}"`;
+  //   }
+  //   return `"${term}"`;
+  // }, [term, taxonomy]);
 
   useEffect(() => {
     // if (!term) return;

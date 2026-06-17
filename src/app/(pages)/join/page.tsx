@@ -10,16 +10,27 @@ import Link from "next/link";
 export const revalidate = 60; // ISR every 1 minute
 import { cookies } from "next/headers";
 
-const page = async () => {
+const Page = async () => {
   // const t = useTranslations('Join');
   const t = await getTranslations("Join");
 
-  const { data } = await client.query({ query: GET_PROJECTS });
+  // const { data } = await client.query({ query: GET_PROJECTS });
+
+  // 2. Add Type Assertion to fix 'data' is unknown
+  const { data } = (await client.query({ 
+    query: GET_PROJECTS 
+  })) as { data: { projects: { nodes: any[] } } };
+
   const projects = data.projects.nodes;
+
   console.log("data: ", data);
   console.log("projects: ", projects);
 
-  const locale = cookies().get("locale")?.value === "de" ? "DE" : "EN";
+  // const locale = cookies().get("locale")?.value === "de" ? "DE" : "EN";
+
+  // 3. Add 'await' to cookies() for Next.js 15
+  const cookieStore = await cookies();
+  const locale = cookieStore.get("locale")?.value === "de" ? "DE" : "EN";
 
   
 
@@ -58,4 +69,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;

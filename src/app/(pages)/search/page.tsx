@@ -9,17 +9,24 @@ import {
 } from "@/lib/graphql/queries/getTaxonomies";
 import SearchBar from "@/components/ui/SearchComponent";
 import PageHeader from "@/components/layout/PageHeader";
-import Image from "next/image";
-import { ArrowRight, MapPin, SquareChevronRight, User } from "lucide-react";
+import { MapPin, SquareChevronRight, User } from "lucide-react";
 import Link from "next/link";
 import { getTranslations } from 'next-intl/server';
 import {cookies} from "next/headers";
 
 
 // Define the shape for both taxonomy types for safety
+// interface TaxonomyNode {
+//   slug: string;
+//   name: string;
+// }
+
 interface TaxonomyNode {
   slug: string;
   name: string;
+  translations?: {
+    germanTerm?: string;
+  };
 }
 
 // Set a short revalidation time for server-side fetching
@@ -37,9 +44,12 @@ const TaxonomyList = async ({
   nodes: TaxonomyNode[];
   icon: React.ReactNode;
 }) => {
-  const t = await getTranslations("Search");
+  // const t = await getTranslations("Search");
   
-  const locale = cookies().get("locale")?.value === "de" ? "DE" : "EN";
+  // const locale = cookies().get("locale")?.value === "de" ? "DE" : "EN";
+  // Fix: await the cookies
+  const cookieStore = await cookies(); 
+  const locale = cookieStore.get("locale")?.value === "de" ? "DE" : "EN";
   console.log("LOCALE:" , locale);
 
   return (
@@ -72,7 +82,7 @@ const TaxonomyList = async ({
   );
 };
 
-const page = async () => {
+const Page = async () => {
   const t = await getTranslations("Search");
   const tGeneral = await getTranslations("General");
   // 1. Fetch both queries concurrently using Promise.all()
@@ -141,4 +151,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;

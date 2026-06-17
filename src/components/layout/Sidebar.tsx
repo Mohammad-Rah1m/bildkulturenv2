@@ -5,7 +5,6 @@ import {
   Home,
   Settings,
   User,
-  LayoutGrid,
   Search,
   NotebookTabs,
 } from "lucide-react"; // lightweight icon library

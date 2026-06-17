@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import { ArrowRight } from "lucide-react";
@@ -5,7 +6,7 @@ import PageHeader from "@/components/layout/PageHeader";
 import Link from "next/link";
 import {useTranslations} from 'next-intl';
 
-const page = () => {
+const Page = () => {
   const t = useTranslations('Application');
   return (
     <div className="flex flex-col gap-5">
@@ -56,4 +57,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

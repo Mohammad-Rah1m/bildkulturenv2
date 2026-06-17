@@ -4,7 +4,7 @@ import { Phone, Mail, Globe} from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 import { useTranslations } from "next-intl";
 
-const page = () => {
+const Page = () => {
     const t = useTranslations('Contact');
 
   return (
@@ -58,4 +58,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

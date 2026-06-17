@@ -10,17 +10,23 @@ export const revalidate = 60; // ISR every 1 min
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string };
+  // params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const tGeneral = await getTranslations("General");
-  const tKeywords = await getTranslations("Keywords");
+  // const tKeywords = await getTranslations("Keywords");
+
+  // 2. Await the params before using them
+  const { slug } = await params;
 
   const { data } = await client.query({
     query: GET_PROJECT_BY_SLUG,
-    variables: { slug: params.slug },
-  });
+    variables: { slug: slug },
+  }) as { data: { project: any } };
 
-  const locale = cookies().get("locale")?.value === "de" ? "DE" : "EN";
+  // const locale = cookies().get("locale")?.value === "de" ? "DE" : "EN";
+  const cookieStore = await cookies(); // Add 'await' here
+  const locale = cookieStore.get("locale")?.value === "de" ? "DE" : "EN";
 
   console.log("data:", data);
 

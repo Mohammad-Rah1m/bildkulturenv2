@@ -1,6 +1,6 @@
 import React from "react";
-import { Search } from "lucide-react";
-import { Moon } from "lucide-react";
+// import { Search } from "lucide-react";
+// import { Moon } from "lucide-react";
 import { ThemeToggle } from "../theme/ThemeToggle";
 import SearchBar from "../ui/SearchComponent";
 
